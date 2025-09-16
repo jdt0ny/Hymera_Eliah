@@ -4,7 +4,11 @@
 
 ![Hymera Eliah Banner](./assets/banner.jpg)
 
-## 🚀 Features
+## 🚀 Live Demo
+
+Visit the live website: [https://hymeraeliah.com](https://hymeraeliah.com)
+
+## 🎯 Features
 
 - **Modern UI/UX** with smooth animations and responsive design
 - **Neon-themed** interface with futuristic aesthetics
@@ -19,39 +23,7 @@
 - **Animations**: [AOS (Animate On Scroll)](https://michalsnik.github.io/aos/)
 - **Icons**: [Feather Icons](https://feathericons.com/)
 - **Build Tool**: [Vite](https://vitejs.dev/)
-- **Package Manager**: npm
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js (v14+)
-- npm (v6+)
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/hymera-eliah.git
-   cd hymera-eliah
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server**
-   ```bash
-   npm run dev
-   ```
-   Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-4. **Build for production**
-   ```bash
-   npm run build
-   ```
-   This will create a `dist` folder with the production-ready files.
+- **Hosting**: [Your Hosting Provider]
 
 ## 🎨 Design System
 
@@ -65,21 +37,7 @@
 - **Headings**: Orbitron (Bold 700)
 - **Body**: Roboto (Light 300, Regular 400, Medium 500, Bold 700)
 
-## 📁 Project Structure
-
-```
-hymera-eliah/
-├── src/
-│   ├── main.js          # Main JavaScript file
-│   └── main.css         # Main stylesheet
-├── public/              # Static files
-├── index.html           # Main HTML file
-├── package.json         # Project dependencies
-├── tailwind.config.js   # Tailwind CSS configuration
-└── postcss.config.js    # PostCSS configuration
-```
-
-## 🌟 Features in Detail
+##  Features in Detail
 
 ### 🎯 Navigation
 - Responsive navigation bar with mobile menu
@@ -96,16 +54,6 @@ hymera-eliah/
 - Mobile-first approach
 - Optimized for all screen sizes
 
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -120,5 +68,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <div align="center">
-  Made with ❤️ by [Your Name] | [Website](https://yourwebsite.com)
+  Made with ❤️ by [Your Company/Name] | [Website](https://yourwebsite.com)
 </div>
