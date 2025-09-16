@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hymera Eliah - Bridging the gap between ancient wisdom and future technology">
+    <meta name="keywords" content="technology, innovation, future tech, Hymera Eliah">
+    <meta name="author" content="Hymera Eliah">
+    <meta property="og:title" content="Hymera Eliah | Future Tech with Ancient Roots">
+    <meta property="og:description" content="Bridging the gap between ancient wisdom and future technology">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Hymera Eliah | Future Tech with Ancient Roots</title>
+    
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="/src/main.css">
+    
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="/node_modules/aos/dist/aos.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="/node_modules/feather-icons/dist/feather.min.js"></script>
+    
+    <!-- AOS JS -->
+    <script src="/node_modules/aos/dist/aos.js" defer></script>
+    
+    <style>
+        :root {
+            --neon-green: #00ff9d;
+            --neon-purple: #bd00ff;
+            --dark-bg: #0a0a0a;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            overflow-x: hidden;
+        }
+        .title-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .neon-text-green {
+            text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green);
+        }
+        .neon-text-purple {
+            text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple);
+        }
+        .neon-border-green {
+            box-shadow: 0 0 10px var(--neon-green), inset 0 0 5px var(--neon-green);
+            border: 1px solid var(--neon-green);
+        }
+        .neon-border-purple {
+            box-shadow: 0 0 10px var(--neon-purple), inset 0 0 5px var(--neon-purple);
+            border: 1px solid var(--neon-purple);
+        }
+        .glow-hover:hover {
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        .feature-card {
+            backdrop-filter: blur(10px);
+            background: rgba(15, 15, 15, 0.7);
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 157, 0.2);
+        }
+        .step-number {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .testimonial-card {
+            background: linear-gradient(145deg, #111111, #0a0a0a);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .contact-input {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+        .contact-input:focus {
+            border-color: var(--neon-green);
+            box-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+        }
+
+        /* Stili mancanti */
+        .title-font {
+          font-family: 'Orbitron', sans-serif;
+        }
+
+        .neon-text-green {
+          color: var(--neon-green);
+          text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+        }
+
+        .neon-text-purple {
+          color: var(--neon-purple);
+          text-shadow: 0 0 10px rgba(189, 0, 255, 0.5);
+        }
+
+        /* Assicura che le sezioni siano visibili */
+        section {
+          min-height: 100vh;
+          padding: 2rem 0;
+          position: relative;
+          overflow: hidden;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full neon-border-green flex items-center justify-center">
+                        <span class="title-font text-xl neon-text-green">HE</span>
+                    </div>
+                    <span class="title-font text-xl neon-text-green">Hymera Eliah</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="hover:text-green-400 transition">About</a>
+                    <a href="#features" class="hover:text-green-400 transition">Features</a>
+                    <a href="#how-it-works" class="hover:text-green-400 transition">How It Works</a>
+                    <a href="#testimonials" class="hover:text-green-400 transition">Community</a>
+                    <a href="#contact" class="hover:text-green-400 transition">Contact</a>
+                    <a href="#login" class="px-4 py-2 rounded-full bg-gradient-to-r from-green-500 to-purple-600 font-bold glow-hover">Login</a>
+                </div>
+                <button class="md:hidden" id="mobile-menu-button">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-20" id="hero">
+        <div class="container mx-auto px-6 py-20 text-center">
+            <div data-aos="fade-up">
+                <h1 class="title-font text-5xl md:text-7xl font-bold mb-6">
+                    <span class="neon-text-green">Hymera</span> 
+                    <span class="neon-text-purple">Eliah</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
+                    From Ancient Roots to Future Tech – Smart IT Assistance for a New Era
+                </p>
+                <button class="px-8 py-3 bg-gradient-to-r from-green-500 to-purple-600 rounded-full font-bold glow-hover neon-border-green">
+                    Join the Beta
+                </button>
+            </div>
+            <div class="mt-20" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-full max-w-4xl mx-auto h-1 bg-gradient-to-r from-green-500 via-purple-500 to-green-500 rounded-full"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-black bg-opacity-50" id="about">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="title-font text-3xl md:text-4xl mb-4">Where Heritage Meets Innovation</h2>
+                <div class="w-20 h-1 bg-green-500 mx-auto mb-6"></div>
+                <p class="max-w-3xl mx-auto text-lg opacity-90">
+                    Hymera Eliah bridges the timeless wisdom of Sicilian heritage with cutting-edge, sustainable technology solutions.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="feature-card p-8 rounded-xl" data-aos="fade-right">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-purple-600 flex items-center justify-center mr-4">
+                            <i data-feather="globe" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="title-font text-2xl">Hymera: Ancient Foundations</h3>
+                    </div>
+                    <p class="opacity-80">
+                        Drawing from the rich history of Sicilian innovation, we honor the past while building the future. 
+                        Our name pays homage to the ancient city of Hymera, a beacon of culture and progress.
+                    </p>
+                </div>
+                <div class="feature-card p-8 rounded-xl" data-aos="fade-left" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-green-500 flex items-center justify-center mr-4">
+                            <i data-feather="cpu" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="title-font text-2xl">Eliah: Future Technology</h3>
+                    </div>
+                    <p class="opacity-80">
+                        Our platform delivers next-generation IT solutions with a commitment to sustainability and efficiency. 
+                        Eliah represents our vision for a smarter, greener technological future.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20" id="features">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="title-font text-3xl md:text-4xl mb-4">Powerful Features</h2>
+                <div class="w-20 h-1 bg-purple-500 mx-auto mb-6"></div>
+                <p class="max-w-3xl mx-auto text-lg opacity-90">
+                    Designed for professionals who demand excellence from their technology partners.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="feature-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-16 h-16 rounded-full bg-green-500 bg-opacity-20 flex items-center justify-center mb-6">
+                        <i data-feather="zap" class="w-8 h-8 text-green-500"></i>
+                    </div>
+                    <h3 class="title-font text-xl mb-3">Rapid Response</h3>
+                    <p class="opacity-80">
+                        Get instant access to IT experts who can solve your issues in minutes, not hours.
+                    </p>
+                </div>
+                <div class="feature-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 rounded-full bg-purple-500 bg-opacity-20 flex items-center justify-center mb-6">
+                        <i data-feather="shield" class="w-8 h-8 text-purple-500"></i>
+                    </div>
+                    <h3 class="title-font text-xl mb-3">Secure Platform</h3>
+                    <p class="opacity-80">
+                        Enterprise-grade security protocols to protect your data and systems at all times.
+                    </p>
+                </div>
+                <div class="feature-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 rounded-full bg-green-500 bg-opacity-20 flex items-center justify-center mb-6">
+                        <i data-feather="users" class="w-8 h-8 text-green-500"></i>
+                    </div>
+                    <h3 class="title-font text-xl mb-3">Expert Network</h3>
+                    <p class="opacity-80">
+                        Connect with certified professionals across all major technology platforms.
+                    </p>
+                </div>
+                <div class="feature-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 rounded-full bg-purple-500 bg-opacity-20 flex items-center justify-center mb-6">
+                        <i data-feather="trending-up" class="w-8 h-8 text-purple-500"></i>
+                    </div>
+                    <h3 class="title-font text-xl mb-3">Future-Ready</h3>
+                    <p class="opacity-80">
+                        Stay ahead with tools designed for tomorrow's challenges and opportunities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 bg-black bg-opacity-50" id="how-it-works">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="title-font text-3xl md:text-4xl mb-4">Simple Process</h2>
+                <div class="w-20 h-1 bg-green-500 mx-auto mb-6"></div>
+                <p class="max-w-3xl mx-auto text-lg opacity-90">
+                    Get the tech support you need in three easy steps.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="0">
+                    <div class="step-number bg-gradient-to-br from-green-500 to-purple-600 mx-auto">
+                        <span class="text-xl">1</span>
+                    </div>
+                    <h3 class="title-font text-xl mb-3">Find Your Expert</h3>
+                    <p class="opacity-80">
+                        Browse our network of certified professionals or let our AI match you with the perfect specialist.
+                    </p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number bg-gradient-to-br from-purple-600 to-green-500 mx-auto">
+                        <span class="text-xl">2</span>
+                    </div>
+                    <h3 class="title-font text-xl mb-3">Book Support</h3>
+                    <p class="opacity-80">
+                        Schedule a session at your convenience with transparent pricing and no hidden fees.
+                    </p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number bg-gradient-to-br from-green-500 to-purple-600 mx-auto">
+                        <span class="text-xl">3</span>
+                    </div>
+                    <h3 class="title-font text-xl mb-3">Solve Your Issues</h3>
+                    <p class="opacity-80">
+                        Get your problems solved efficiently with follow-up support to ensure complete satisfaction.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20" id="testimonials">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="title-font text-3xl md:text-4xl mb-4">Our Community</h2>
+                <div class="w-20 h-1 bg-purple-500 mx-auto mb-6"></div>
+                <p class="max-w-3xl mx-auto text-lg opacity-90">
+                    Join thousands of professionals who trust Hymera Eliah for their technology needs.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="0">
+                    <div class="flex items-center mb-6">
+                        <img src="http://static.photos/people/200x200/1" alt="Testimonial" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Marco R.</h4>
+                            <p class="text-sm opacity-70">CTO, TechStart</p>
+                        </div>
+                    </div>
+                    <p class="opacity-80 italic">
+                        "Hymera Eliah's experts saved us during a critical system outage. Their response time and expertise were unmatched."
+                    </p>
+                </div>
+                <div class="testimonial-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <img src="http://static.photos/people/200x200/2" alt="Testimonial" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Sophia K.</h4>
+                            <p class="text-sm opacity-70">CEO, GreenSolutions</p>
+                        </div>
+                    </div>
+                    <p class="opacity-80 italic">
+                        "The sustainable approach combined with top-tier tech support makes Hymera Eliah our go-to partner."
+                    </p>
+                </div>
+                <div class="testimonial-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <img src="http://static.photos/people/200x200/3" alt="Testimonial" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Alessandro D.</h4>
+                            <p class="text-sm opacity-70">IT Director, FinCorp</p>
+                        </div>
+                    </div>
+                    <p class="opacity-80 italic">
+                        "We've reduced our IT downtime by 70% since partnering with Hymera Eliah. Their network of experts is incredible."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-black bg-opacity-50" id="contact">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="title-font text-3xl md:text-4xl mb-4">Join the Future</h2>
+                <div class="w-20 h-1 bg-green-500 mx-auto mb-6"></div>
+                <p class="max-w-3xl mx-auto text-lg opacity-90">
+                    Ready to experience next-generation IT support? Get in touch or join our beta program.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="feature-card p-8 rounded-xl" data-aos="fade-right">
+                    <h3 class="title-font text-2xl mb-6">Contact Us</h3>
+                    <form>
+                        <div class="mb-4">
+                            <input type="text" placeholder="Your Name" class="contact-input w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div class="mb-4">
+                            <input type="email" placeholder="Your Email" class="contact-input w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div class="mb-4">
+                            <textarea placeholder="Your Message" class="contact-input w-full px-4 py-3 rounded-lg" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-gradient-to-r from-green-500 to-purple-600 rounded-full font-bold glow-hover">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                <div class="feature-card p-8 rounded-xl flex flex-col justify-between" data-aos="fade-left">
+                    <div>
+                        <h3 class="title-font text-2xl mb-6">Beta Program</h3>
+                        <p class="mb-6 opacity-80">
+                            Be among the first to experience Hymera Eliah's revolutionary platform. Beta testers receive exclusive benefits and early access to new features.
+                        </p>
+                        <button class="w-full py-3 bg-gradient-to-r from-purple-600 to-green-500 rounded-full font-bold glow-hover mb-6">
+                            Apply for Beta Access
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-center space-x-6">
+                        <a href="#" class="w-12 h-12 rounded-full bg-green-500 bg-opacity-20 flex items-center justify-center glow-hover">
+                            <i data-feather="message-circle" class="text-green-500"></i>
+                        </a>
+                        <span class="opacity-80">Or chat with us on WhatsApp</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login/Register Section -->
+    <section class="min-h-screen flex items-center justify-center py-20 bg-black bg-opacity-50" id="login">
+        <div class="container mx-auto px-6">
+            <div class="max-w-md mx-auto feature-card p-8 rounded-xl">
+                <div class="flex justify-between mb-8">
+                    <button id="login-tab" class="title-font text-xl px-4 py-2 rounded-full bg-gradient-to-r from-green-500 to-purple-600">Login</button>
+                    <button id="register-tab" class="title-font text-xl px-4 py-2 rounded-full bg-gray-800 hover:bg-gray-700 transition">Register</button>
+                </div>
+                
+                <div id="login-form">
+                    <h3 class="title-font text-2xl mb-6">Welcome Back</h3>
+                    <form>
+                        <div class="mb-4">
+                            <input type="email" placeholder="Email" class="contact-input w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div class="mb-6">
+                            <input type="password" placeholder="Password" class="contact-input w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-gradient-to-r from-green-500 to-purple-600 rounded-full font-bold glow-hover">
+                            Login
+                        </button>
+                    </form>
+                </div>
+                
+                <div id="register-form" class="hidden">
+                    <h3 class="title-font text-2xl mb-6">Create Account</h3>
+                    <form>
+                        <div class="mb-4">
+                            <input type="text" placeholder="Full Name" class="contact-input w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div class="mb-4">
+                            <input type="email" placeholder="Email" class="contact-input w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div class="mb-4">
+                            <input type="password" placeholder="Password" class="contact-input w-full px-4 py-3 rounded-lg" id="register-password">
+                        </div>
+                        <div class="mb-6">
+                            <input type="password" placeholder="Confirm Password" class="contact-input w-full px-4 py-3 rounded-lg" id="confirm-password">
+                        </div>
+                        <div class="mb-6">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded bg-gray-700 border-gray-600 mr-2">
+                                <span class="text-sm opacity-80">I'm a professional offering services</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-gradient-to-r from-purple-600 to-green-500 rounded-full font-bold glow-hover">
+                            Register
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="min-h-screen py-20 bg-black bg-opacity-50 hidden" id="dashboard">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="title-font text-3xl">Dashboard</h2>
+                <button id="logout-btn" class="px-4 py-2 rounded-full bg-gray-800 hover:bg-gray-700 transition">Logout</button>
+            </div>
+            
+            <!-- Client Dashboard -->
+            <div id="client-dashboard">
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="feature-card p-8 rounded-xl">
+                        <h3 class="title-font text-2xl mb-6">Search IT Experts</h3>
+                        <div class="mb-4">
+                            <input type="text" placeholder="Search by skill or technology" class="contact-input w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <button class="w-full py-3 bg-gradient-to-r from-green-500 to-purple-600 rounded-full font-bold glow-hover">
+                            Search
+                        </button>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl">
+                        <h3 class="title-font text-2xl mb-6">Book Appointment</h3>
+                        <div class="mb-4">
+                            <input type="text" placeholder="Select expert" class="contact-input w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div class="mb-4">
+                            <input type="datetime-local" class="contact-input w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <button class="w-full py-3 bg-gradient-to-r from-purple-600 to-green-500 rounded-full font-bold glow-hover">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+                <div class="feature-card p-8 rounded-xl">
+                    <h3 class="title-font text-2xl mb-6">My Appointments</h3>
+                    <p class="opacity-80">No upcoming appointments</p>
+                </div>
+            </div>
+            
+            <!-- Professional Dashboard -->
+            <div id="professional-dashboard" class="hidden">
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="feature-card p-8 rounded-xl">
+                        <h3 class="title-font text-2xl mb-6">My Services</h3>
+                        <div class="mb-4">
+                            <input type="text" placeholder="Add new service" class="contact-input w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <button class="w-full py-3 bg-gradient-to-r from-green-500 to-purple-600 rounded-full font-bold glow-hover">
+                            Add Service
+                        </button>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl">
+                        <h3 class="title-font text-2xl mb-6">Incoming Requests</h3>
+                        <p class="opacity-80 mb-4">You have 3 new requests</p>
+                        <button class="w-full py-3 bg-gradient-to-r from-purple-600 to-green-500 rounded-full font-bold glow-hover">
+                            View Requests
+                        </button>
+                    </div>
+                </div>
+                <div class="feature-card p-8 rounded-xl">
+                    <h3 class="title-font text-2xl mb-6">My Schedule</h3>
+                    <p class="opacity-80">No upcoming bookings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full neon-border-green flex items-center justify-center">
+                            <span class="title-font text-xl neon-text-green">HE</span>
+                        </div>
+                        <span class="title-font text-xl neon-text-green">Hymera Eliah</span>
+                    </div>
+                    <p class="opacity-70">
+                        Bridging ancient wisdom with future technology for sustainable IT solutions.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="title-font text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="opacity-70 hover:text-green-400 transition">About</a></li>
+                        <li><a href="#features" class="opacity-70 hover:text-green-400 transition">Features</a></li>
+                        <li><a href="#how-it-works" class="opacity-70 hover:text-green-400 transition">How It Works</a></li>
+                        <li><a href="#testimonials" class="opacity-70 hover:text-green-400 transition">Community</a></li>
+                        <li><a href="#contact" class="opacity-70 hover:text-green-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="title-font text-lg mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="opacity-70 hover:text-green-400 transition">Privacy Policy</a></li>
+                        <li><a href="#" class="opacity-70 hover:text-green-400 transition">Terms of Service</a></li>
+                        <li><a href="#" class="opacity-70 hover:text-green-400 transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="title-font text-lg mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-500 transition">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-500 transition">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-500 transition">
+                            <i data-feather="github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center opacity-70">
+                <p>&copy; 2023 Hymera Eliah. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

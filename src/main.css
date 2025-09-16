@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-dark-bg text-white overflow-x-hidden min-h-screen flex flex-col;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-orbitron;
+  }
+  
+  .container {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer components {
+  .title-font {
+    @apply font-orbitron;
+  }
+  
+  .neon-text-green {
+    @apply text-neon-green;
+    text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+  }
+  
+  .neon-text-purple {
+    @apply text-neon-purple;
+    text-shadow: 0 0 10px rgba(189, 0, 255, 0.5);
+  }
+  
+  .neon-border-green {
+    @apply border-neon-green shadow-[0_0_10px_var(--neon-green),inset_0_0_5px_var(--neon-green)] border;
+  }
+  
+  .neon-border-purple {
+    @apply border-neon-purple shadow-[0_0_10px_var(--neon-purple),inset_0_0_5px_var(--neon-purple)] border;
+  }
+  
+  .feature-card {
+    @apply backdrop-blur-md bg-opacity-70 bg-gray-900 transition-all duration-300 rounded-xl p-6;
+  }
+  
+  .feature-card:hover {
+    @apply -translate-y-1 shadow-lg shadow-neon-green/20;
+  }
+  
+  .testimonial-card {
+    @apply bg-gradient-to-br from-gray-900 to-dark-bg shadow-xl p-6 rounded-lg;
+  }
+  
+  .contact-input {
+    @apply bg-gray-900/80 border border-gray-700 rounded-lg px-4 py-2 w-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-neon-green focus:border-transparent transition-all duration-300;
+  }
+  
+  .contact-input:focus {
+    @apply border-neon-green shadow-[0_0_0_3px_rgba(0,255,157,0.1)];
+  }
+  
+  .step-number {
+    @apply w-12 h-12 flex items-center justify-center rounded-full font-bold mb-4 bg-gradient-to-r from-neon-green to-neon-purple text-dark-bg text-xl mx-auto;
+  }
+  
+  .btn {
+    @apply px-6 py-2 rounded-full font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-bg;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-neon-green to-neon-purple text-dark-bg hover:opacity-90 focus:ring-neon-green;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-800 text-white hover:bg-gray-700 focus:ring-gray-500;
+  }
+}
